@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Confidentialité - Horaire de Travail Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4CAF50;
+            --primary-dark: #388E3C;
+            --bg-dark: #121212;
+            --bg-card: #1E1E1E;
+            --bg-card-hover: #2A2A2A;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B0B0B0;
+            --text-muted: #757575;
+            --border: #333333;
+            --accent-blue: #2196F3;
+            --accent-orange: #FF9800;
+            --accent-red: #F44336;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.3; }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Language Selector */
+        .lang-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .lang-btn {
+            padding: 10px 20px;
+            border: 2px solid var(--border);
+            background: transparent;
+            color: var(--text-secondary);
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        /* Sections */
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .card h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card h2 .icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .card ul li {
+            padding: 8px 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .card ul li::before {
+            content: '•';
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 1.4;
+        }
+
+        /* Highlight Box */
+        .highlight {
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            border-radius: 12px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+
+        .highlight.warning {
+            background: rgba(255, 152, 0, 0.1);
+            border-color: rgba(255, 152, 0, 0.3);
+        }
+
+        .highlight strong {
+            color: var(--primary);
+        }
+
+        .highlight.warning strong {
+            color: var(--accent-orange);
+        }
+
+        /* No Data List */
+        .no-data-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .no-data-item {
+            background: rgba(244, 67, 54, 0.1);
+            border: 1px solid rgba(244, 67, 54, 0.2);
+            border-radius: 10px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+        }
+
+        .no-data-item .x {
+            color: var(--accent-red);
+            font-weight: bold;
+        }
+
+        /* Rights Grid */
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .right-item {
+            background: var(--bg-card-hover);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .right-item .emoji {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .right-item strong {
+            display: block;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .right-item span {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Contact Card */
+        .contact-card {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-hover) 100%);
+            text-align: center;
+            padding: 32px;
+        }
+
+        .contact-card .email {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 16px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .contact-card .email:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .footer .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg-card);
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-top: 12px;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header {
+                padding: 40px 20px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .lang-btn {
+                padding: 8px 14px;
+                font-size: 13px;
+            }
+
+            .no-data-list,
+            .rights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-content">
+            <div class="app-icon">📅</div>
+            <h1>Horaire de Travail Pro</h1>
+            <p>Politique de Confidentialité • Dernière mise à jour : 2 décembre 2025</p>
+        </div>
+    </div>
+
+    <!-- Language Selector -->
+    <div class="lang-selector">
+        <button class="lang-btn active" onclick="showLang('fr')">🇫🇷 Français</button>
+        <button class="lang-btn" onclick="showLang('en')">🇬🇧 English</button>
+        <button class="lang-btn" onclick="showLang('es')">🇪🇸 Español</button>
+    </div>
+
+    <div class="container">
+        <!-- FRENCH -->
+        <div id="fr" class="section active">
+            <div class="card">
+                <h2><span class="icon">👋</span> Introduction</h2>
+                <p>Bienvenue dans Horaire de Travail Pro. Nous respectons votre vie privée et nous nous engageons à protéger vos données personnelles.</p>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">🔒</span> Collecte de données</h2>
+                <div class="highlight">
+                    <strong>Horaire de Travail Pro ne collecte AUCUNE donnée personnelle.</strong>
+                </div>
+                <p>Toutes les informations que vous saisissez sont stockées <strong>uniquement sur votre appareil</strong> (stockage local).</p>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">📱</span> Données stockées localement</h2>
+                <ul>
+                    <li>Vos horaires de travail</li>
+                    <li>Informations sur vos employeurs (nom, taux horaire, couleur)</li>
+                    <li>Vos paramètres de l'application</li>
+                    <li>Historique des congés</li>
+                    <li>Statistiques calculées</li>
+                </ul>
+                <div class="highlight">
+                    <strong>Ces données ne quittent jamais votre appareil</strong> sauf si vous choisissez de les exporter manuellement (PDF, CSV, JSON).
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">🚫</span> Services tiers</h2>
+                <p>L'application n'utilise aucun service tiers de suivi ou d'analyse :</p>
+                <div class="no-data-list">
+                    <div class="no-data-item"><span class="x">❌</span> Pas de Google Analytics</div>
+                    <div class="no-data-item"><span class="x">❌</span> Pas de Firebase</div>
+                    <div class="no-data-item"><span class="x">❌</span> Pas de publicités</div>
+                    <div class="no-data-item"><span class="x">❌</span> Pas de trackers</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">🎤</span> Siri et Widget iOS</h2>
+                <p>L'application utilise les fonctionnalités iOS natives :</p>
+                <ul>
+                    <li><strong>Siri Shortcuts</strong> : Permet d'ajouter et consulter vos horaires par commande vocale. Les données sont traitées localement par iOS.</li>
+                    <li><strong>Widget iOS</strong> : Affiche votre horaire sur l'écran d'accueil. Les données restent sur votre appareil.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">🛡️</span> Sécurité</h2>
+                <p>Vos données sont protégées par :</p>
+                <ul>
+                    <li>Le système de sécurité intégré de votre appareil iOS/Android</li>
+                    <li>Le chiffrement natif du stockage de l'appareil</li>
+                    <li>Aucune transmission sur Internet</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">✨</span> Vos droits</h2>
+                <p>Vous avez le contrôle total de vos données :</p>
+                <div class="rights-grid">
+                    <div class="right-item">
+                        <div class="emoji">👁️</div>
+                        <strong>Accès</strong>
+                        <span>Toutes vos données sont visibles dans l'app</span>
+                    </div>
+                    <div class="right-item">
+                        <div class="emoji">✏️</div>
+                        <strong>Modification</strong>
+                        <span>Modifiez vos données à tout moment</span>
+                    </div>
+                    <div class="right-item">
+                        <div class="emoji">🗑️</div>
+                        <strong>Suppression</strong>
+                        <span>Supprimez l'app pour tout effacer</span>
+                    </div>
+                    <div class="right-item">
+                        <div class="emoji">📤</div>
+                        <strong>Export</strong>
+                        <span>Exportez en PDF, CSV, JSON</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">👶</span> Enfants</h2>
+                <p>L'application ne collecte aucune donnée et peut être utilisée par des personnes de tout âge. Elle est classée <strong>4+</strong> sur l'App Store.</p>
+            </div>
+
+            <div class="card contact-card">
+                <h2><span class="icon">📧</span> Contact</h2>
+                <p>Pour toute question concernant cette politique de confidentialité :</p>
+                <a href="mailto:horairetravailpro@gmail.com" class="email">
+                    ✉️ horairetravailpro@gmail.com
+                </a>
+            </div>
+        </div>
+
+        <!-- ENGLISH -->
+        <div id="en" class="section">
+            <div class="card">
+                <h2><span class="icon">👋</span> Introduction</h2>
+                <p>Welcome to Work Schedule Pro. We respect your privacy and are committed to protecting your personal data.</p>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">🔒</span> Data Collection</h2>
+                <div class="highlight">
+                    <strong>Work Schedule Pro does NOT collect any personal data.</strong>
+                </div>
+                <p>All information you enter is stored <strong>only on your device</strong> (local storage).</p>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">📱</span> Data Stored Locally</h2>
+                <ul>
+                    <li>Your work schedules</li>
+                    <li>Employer information (name, hourly rate, color)</li>
+                    <li>Your app settings</li>
+                    <li>Leave history</li>
+                    <li>Calculated statistics</li>
+                </ul>
+                <div class="highlight">
+                    <strong>This data never leaves your device</strong> unless you choose to manually export it (PDF, CSV, JSON).
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">🚫</span> Third-Party Services</h2>
+                <p>The application does not use any third-party tracking or analytics services:</p>
+                <div class="no-data-list">
+                    <div class="no-data-item"><span class="x">❌</span> No Google Analytics</div>
+                    <div class="no-data-item"><span class="x">❌</span> No Firebase</div>
+                    <div class="no-data-item"><span class="x">❌</span> No advertisements</div>
+                    <div class="no-data-item"><span class="x">❌</span> No trackers</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">🎤</span> Siri and iOS Widget</h2>
+                <p>The application uses native iOS features:</p>
+                <ul>
+                    <li><strong>Siri Shortcuts</strong>: Allows you to add and check your schedules by voice command. Data is processed locally by iOS.</li>
+                    <li><strong>iOS Widget</strong>: Displays your schedule on the home screen. Data stays on your device.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">🛡️</span> Security</h2>
+                <p>Your data is protected by:</p>
+                <ul>
+                    <li>Your iOS/Android device's built-in security system</li>
+                    <li>Native device storage encryption</li>
+                    <li>No Internet transmission</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">✨</span> Your Rights</h2>
+                <p>You have full control of your data:</p>
+                <div class="rights-grid">
+                    <div class="right-item">
+                        <div class="emoji">👁️</div>
+                        <strong>Access</strong>
+                        <span>All data visible in the app</span>
+                    </div>
+                    <div class="right-item">
+                        <div class="emoji">✏️</div>
+                        <strong>Modification</strong>
+                        <span>Modify your data anytime</span>
+                    </div>
+                    <div class="right-item">
+                        <div class="emoji">🗑️</div>
+                        <strong>Deletion</strong>
+                        <span>Delete app to erase all</span>
+                    </div>
+                    <div class="right-item">
+                        <div class="emoji">📤</div>
+                        <strong>Export</strong>
+                        <span>Export to PDF, CSV, JSON</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">👶</span> Children</h2>
+                <p>The application does not collect any data and can be used by people of all ages. It is rated <strong>4+</strong> on the App Store.</p>
+            </div>
+
+            <div class="card contact-card">
+                <h2><span class="icon">📧</span> Contact</h2>
+                <p>For any questions about this privacy policy:</p>
+                <a href="mailto:horairetravailpro@gmail.com" class="email">
+                    ✉️ horairetravailpro@gmail.com
+                </a>
+            </div>
+        </div>
+
+        <!-- SPANISH -->
+        <div id="es" class="section">
+            <div class="card">
+                <h2><span class="icon">👋</span> Introducción</h2>
+                <p>Bienvenido a Horario de Trabajo Pro. Respetamos su privacidad y nos comprometemos a proteger sus datos personales.</p>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">🔒</span> Recopilación de datos</h2>
+                <div class="highlight">
+                    <strong>Horario de Trabajo Pro NO recopila ningún dato personal.</strong>
+                </div>
+                <p>Toda la información que ingresa se almacena <strong>únicamente en su dispositivo</strong> (almacenamiento local).</p>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">📱</span> Datos almacenados localmente</h2>
+                <ul>
+                    <li>Sus horarios de trabajo</li>
+                    <li>Información del empleador (nombre, tarifa por hora, color)</li>
+                    <li>Configuración de la aplicación</li>
+                    <li>Historial de licencias</li>
+                    <li>Estadísticas calculadas</li>
+                </ul>
+                <div class="highlight">
+                    <strong>Estos datos nunca salen de su dispositivo</strong> a menos que elija exportarlos manualmente (PDF, CSV, JSON).
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">🚫</span> Servicios de terceros</h2>
+                <p>La aplicación no utiliza ningún servicio de seguimiento o análisis de terceros:</p>
+                <div class="no-data-list">
+                    <div class="no-data-item"><span class="x">❌</span> Sin Google Analytics</div>
+                    <div class="no-data-item"><span class="x">❌</span> Sin Firebase</div>
+                    <div class="no-data-item"><span class="x">❌</span> Sin publicidad</div>
+                    <div class="no-data-item"><span class="x">❌</span> Sin rastreadores</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">🎤</span> Siri y Widget iOS</h2>
+                <p>La aplicación utiliza funciones nativas de iOS:</p>
+                <ul>
+                    <li><strong>Siri Shortcuts</strong>: Permite agregar y consultar sus horarios por comando de voz. Los datos son procesados localmente por iOS.</li>
+                    <li><strong>Widget iOS</strong>: Muestra su horario en la pantalla de inicio. Los datos permanecen en su dispositivo.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">🛡️</span> Seguridad</h2>
+                <p>Sus datos están protegidos por:</p>
+                <ul>
+                    <li>El sistema de seguridad integrado de su dispositivo iOS/Android</li>
+                    <li>Cifrado nativo del almacenamiento del dispositivo</li>
+                    <li>Sin transmisión por Internet</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">✨</span> Sus derechos</h2>
+                <p>Tiene control total de sus datos:</p>
+                <div class="rights-grid">
+                    <div class="right-item">
+                        <div class="emoji">👁️</div>
+                        <strong>Acceso</strong>
+                        <span>Todos los datos visibles en la app</span>
+                    </div>
+                    <div class="right-item">
+                        <div class="emoji">✏️</div>
+                        <strong>Modificación</strong>
+                        <span>Modifique sus datos en cualquier momento</span>
+                    </div>
+                    <div class="right-item">
+                        <div class="emoji">🗑️</div>
+                        <strong>Eliminación</strong>
+                        <span>Elimine la app para borrar todo</span>
+                    </div>
+                    <div class="right-item">
+                        <div class="emoji">📤</div>
+                        <strong>Exportación</strong>
+                        <span>Exporte a PDF, CSV, JSON</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">👶</span> Niños</h2>
+                <p>La aplicación no recopila ningún dato y puede ser utilizada por personas de todas las edades. Está clasificada como <strong>4+</strong> en el App Store.</p>
+            </div>
+
+            <div class="card contact-card">
+                <h2><span class="icon">📧</span> Contacto</h2>
+                <p>Para cualquier pregunta sobre esta política de privacidad:</p>
+                <a href="mailto:horairetravailpro@gmail.com" class="email">
+                    ✉️ horairetravailpro@gmail.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2025 Horaire de Travail Pro. Tous droits réservés.</p>
+        <div class="badge">
+            <span>📅</span> Work Schedule Pro
+        </div>
+    </div>
+
+    <script>
+        function showLang(lang) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            // Show selected section
+            document.getElementById(lang).classList.add('active');
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Detect browser language
+        const browserLang = navigator.language.substring(0, 2);
+        if (['fr', 'en', 'es'].includes(browserLang)) {
+            document.addEventListener('DOMContentLoaded', () => {
+                showLang(browserLang);
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.textContent.includes(browserLang === 'fr' ? 'Français' : browserLang === 'en' ? 'English' : 'Español')) {
+                        btn.classList.add('active');
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
