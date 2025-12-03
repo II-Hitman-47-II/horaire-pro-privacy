@@ -238,21 +238,4 @@ Para cualquier pregunta sobre esta política de privacidad:
 
 ---
 
-## Version HTML pour hébergement web
-
-Vous pouvez copier le contenu ci-dessus et le publier sur :
-- GitHub Pages (gratuit)
-- Notion (gratuit, permet de créer une page publique)
-- Google Sites (gratuit)
-- Votre propre site web
-
-### Exemple pour GitHub Pages
-
-1. Créez un repository GitHub nommé `horaire-pro-privacy`
-2. Créez un fichier `index.html` avec le contenu HTML
-3. Activez GitHub Pages dans les paramètres du repository
-4. Votre URL sera : `https://VOTRE_USERNAME.github.io/horaire-pro-privacy/`
-
----
-
 **© 2025 Horaire de Travail Pro. Tous droits réservés.**
