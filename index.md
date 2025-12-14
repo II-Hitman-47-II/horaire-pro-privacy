@@ -27,6 +27,14 @@ Les données suivantes sont stockées uniquement sur votre appareil :
 
 **Ces données ne quittent jamais votre appareil** sauf si vous choisissez de les exporter manuellement (PDF, CSV, JSON).
 
+### Permissions et Accès
+
+L'application peut demander l'accès à certaines fonctionnalités de votre appareil pour améliorer votre expérience :
+
+- **Caméra** : L'accès à la caméra est demandé uniquement pour vous permettre de prendre des photos (par exemple, pour joindre une capture d'écran lors d'une demande de support). Ces photos sont stockées localement sur votre appareil et ne sont jamais transmises à nos serveurs.
+- **Galerie Photos** : L'accès à votre galerie est demandé pour vous permettre de sélectionner des images existantes ou de sauvegarder des captures d'écran.
+- **Notifications** : L'accès aux notifications est demandé pour vous envoyer des rappels concernant vos horaires de travail (si vous activez cette option).
+
 ### Partage de données
 
 Nous ne partageons, vendons ou transférons aucune de vos données à des tiers. 
@@ -105,6 +113,14 @@ The following data is stored only on your device:
 
 **This data never leaves your device** unless you choose to manually export it (PDF, CSV, JSON).
 
+### Permissions and Access
+
+The application may request access to certain features of your device to enhance your experience:
+
+- **Camera**: Access to the camera is requested only to allow you to take photos (for example, to attach a screenshot when requesting support). These photos are stored locally on your device and are never transmitted to our servers.
+- **Photo Gallery**: Access to your gallery is requested to allow you to select existing images or save screenshots.
+- **Notifications**: Access to notifications is requested to send you reminders about your work schedules (if you enable this option).
+
 ### Data Sharing
 
 We do not share, sell, or transfer any of your data to third parties.
@@ -182,6 +198,14 @@ Los siguientes datos se almacenan solo en su dispositivo:
 - Estadísticas calculadas
 
 **Estos datos nunca salen de su dispositivo** a menos que elija exportarlos manualmente (PDF, CSV, JSON).
+
+### Permisos y Acceso
+
+La aplicación puede solicitar acceso a ciertas funciones de su dispositivo para mejorar su experiencia:
+
+- **Cámara**: Se solicita acceso a la cámara únicamente para permitirle tomar fotos (por ejemplo, para adjuntar una captura de pantalla al solicitar soporte). Estas fotos se almacenan localmente en su dispositivo y nunca se transmiten a nuestros servidores.
+- **Galería de Fotos**: Se solicita acceso a su galería para permitirle seleccionar imágenes existentes o guardar capturas de pantalla.
+- **Notificaciones**: Se solicita acceso a las notificaciones para enviarle recordatorios sobre sus horarios de trabajo (si habilita esta opción).
 
 ### Compartir datos
 
